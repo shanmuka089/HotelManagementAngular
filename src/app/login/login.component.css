@@ -1,0 +1,22 @@
+.title{
+    font-family: serif;
+    text-align: center;
+}
+.login{
+    text-align: center;
+}
+.decoration{
+    text-decoration: underline;
+}
+input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+.error{
+    position: fixed;
+    margin-left: 150px;
+    margin-top: -12px;
+}
+
+input.ng-touched.ng-valid{
+    border: 1px solid rgb(5, 243, 68);
+}

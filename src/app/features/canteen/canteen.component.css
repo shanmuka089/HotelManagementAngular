@@ -1,0 +1,24 @@
+.image{
+    background-image: url("../../../assets/images/room.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+.rounde{
+    border-radius: 8px;
+}
+h4{
+    font-family: serif;
+}
+.rounded{
+    padding-bottom: 40px;
+}
+p{
+    text-align: center;
+    font-size: larger;
+    font-family: serif;
+    margin-top: 30px;
+}
+.but{
+    align-items:flex-end;
+}

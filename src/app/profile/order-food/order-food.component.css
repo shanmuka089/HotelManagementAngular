@@ -1,0 +1,17 @@
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+}
+
+.img-container img {
+   width: 300px;
+   height: 250px;
+}
+h4{
+    font-family: serif;
+    text-align: center;
+}
+p{
+    text-align: center;
+}

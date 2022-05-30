@@ -1,0 +1,97 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-6 card mt-5">
+            <div class="card-header">
+            <h1>Check-Out</h1>
+            </div>
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>User name</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span>{{bookingModel.username}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Check-In date</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span>{{bookingModel.checkInDate}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Check-Out date</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span>{{bookingModel.checkOutDate}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Allocated Room</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span>{{allocatedRoom}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Number of persons</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span>{{numberOfpersons}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Room rent</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span>{{roomRent}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Additional Charges</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span>{{additionalCharges}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <hr class="bg-dark">
+                            <label>Total rent</label>
+                        </div>
+                        <div class="col-md-6">
+                            <hr class="bg-dark">
+                            <span>{{totalRent}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+
+                        </div>
+                        <div class="col-md-5">
+                            <div class="col-md-3">
+                                <button class="btn btn-primary ml-5" (click)="payNow()">Payment page</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="col-md-5">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

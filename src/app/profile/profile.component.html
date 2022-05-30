@@ -1,0 +1,30 @@
+<div class="container-fluid emp-profile">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a routerLink="booking-room" routerLinkActive="active" class="nav-link bg-light mr-2">Room booking</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="order-food" routerLinkActive="active" class="nav-link bg-light mr-2">Food order</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="booking-history" routerLinkActive="active" class="nav-link bg-light mr-2">Booking history</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="food-cart" routerLinkActive="active" class="nav-link bg-light mr-2">Food cart</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="ordered-foods" routerLinkActive="active" class="nav-link bg-light mr-2">Ordered foods</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

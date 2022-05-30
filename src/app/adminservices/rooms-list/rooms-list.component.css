@@ -1,0 +1,16 @@
+p{
+    margin: 0px;
+}
+.head{
+    margin-right: 0px;
+    margin-left: 0px;
+    background-color: rgb(3, 83, 83);
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+ul{
+    margin: 0px;
+}
+b{
+    color:rgb(227, 233, 237);
+}

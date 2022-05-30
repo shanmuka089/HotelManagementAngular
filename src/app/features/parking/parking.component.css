@@ -1,0 +1,20 @@
+.rounde {
+    border-radius: 10px;
+}
+
+h3 {
+    font-family: serif;
+    color: navy;
+    margin: 0px;
+}
+
+.hello {
+    background-color: white;
+    padding-bottom: 37px;
+}
+p{
+    font-family: serif;
+    font-size: larger;
+    text-align: center;
+    margin-top: 50px;
+}

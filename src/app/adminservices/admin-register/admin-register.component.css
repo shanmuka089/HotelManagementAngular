@@ -1,0 +1,17 @@
+.align{
+    text-align: center;
+}
+h1{
+    font-family: serif;
+    text-align: center;
+}
+input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+input.ng-touched.ng-valid{
+    border: 1px solid rgb(10, 222, 88);
+}
+p{
+    position: fixed;
+    margin-left: 150px;
+}

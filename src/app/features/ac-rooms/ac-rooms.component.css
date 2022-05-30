@@ -1,0 +1,13 @@
+h3{
+    color:navy;
+}
+.rounde{
+    border-radius: 8px;
+}
+p{
+    font-family: serif;
+    font-size: larger;
+    text-align: center;
+    margin-top: 50px;
+}
+

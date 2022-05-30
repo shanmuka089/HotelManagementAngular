@@ -1,0 +1,47 @@
+h1{
+    font-weight: bolder;
+    font-family: serif;
+    color:rgb(13, 13, 13);
+}
+@keyframes changetext{
+    0% {content:"Room bookings.."; }
+   25% {content:"Are you looking for hotel room booking?"; }
+   50% {content:"It was the correct place for you..."; }
+   75% {content:"Get room booking easy."; }
+   100% {content:" 100k+ satisfied customers.. "; }
+  0% {content:"Room bookings.."; }
+}
+.change_content:after{
+    content:'';
+    animation: changetext 10s infinite linear;
+    font-family:serif;
+    color:rgb(12, 4, 108);
+}
+.change{
+    text-align: center;
+}
+.titles{
+    background:linear-gradient(to right, #5496dd 20%, #eee 75%);
+    padding: 40px;
+}
+p{
+    font-family: serif;
+    margin: 0px;
+}
+.details{
+    margin-left: 50px;
+}
+.logo{
+	text-align: start;
+}
+.image{
+   margin: 0px;
+}
+h5{
+    font-family: serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+a{
+    color: rgb(3, 3, 79);
+}

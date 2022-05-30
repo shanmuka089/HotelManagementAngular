@@ -1,0 +1,79 @@
+<div class="navbar navbar-expand-md navbar-dark hell">
+    <h3 class="logo">Virtusa Hotel</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end">
+        <ul class="navbar-nav links">
+            <li class="nav-item mr-3">
+                <a routerLink="/" routerLinkActive='active' [routerLinkActiveOptions]="{exact:true}"
+                    class="nav-link ext">Home</a>
+            </li>
+
+
+            <li class="nav-item dropdown" *ngIf="users===role2 && isSignedIn">
+                <a class="nav-link dropdown-toggle" routerLinkActive="active" data-toggle="dropdown" href="#"
+                    role="button" aria-haspopup="true" aria-expanded="false">
+                    services
+                </a>
+                <div class="dropdown-menu ">
+                  <a routerLink="add-room" routerLinkActive="active" class="dropdown-item">add
+                    room</a>
+                    <a routerLink="add-food" routerLinkActive="active" class="dropdown-item">add
+                        food</a>
+                    <a routerLink="admin-register" routerLinkActive="active" class="dropdown-item">add
+                        Admin</a>
+                    <a routerLink="show-customers" routerLinkActive="active" class="dropdown-item">
+                        customers</a>
+                        <a routerLink="show-foods" routerLinkActive="active" class="dropdown-item">
+                            Food Items</a>
+                    <a routerLink="customer-bookings" routerLinkActive="active" class="dropdown-item">bookings</a>
+                    <a routerLink="show-rooms" routerLinkActive="active" class="dropdown-item">show
+                        rooms</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" routerLinkActive="active" data-toggle="dropdown" href="#"
+                    role="button" aria-haspopup="true" aria-expanded="false">
+                    features
+                </a>
+                <div class="dropdown-menu">
+                    <a routerLink="canteen" routerLinkActive="active" class="dropdown-item">canteen</a>
+                    <a routerLink="parking" routerLinkActive="active" class="dropdown-item">parking</a>
+                    <a routerLink="acRooms" routerLinkActive="active" class="dropdown-item">ac
+                        rooms</a>
+                    <a routerLink="swimmingPool" routerLinkActive="active" class="dropdown-item">swimming
+                        pool</a>
+                </div>
+
+            </li>
+
+
+            <li class="nav-item dropdown" *ngIf="(users===role2 || users===role1) && isSignedIn">
+                <a class="nav-link dropdown-toggle" routerLinkActive="active" data-toggle="dropdown" href="#"
+                    role="button" aria-haspopup="true" aria-expanded="false">
+                    about
+                </a>
+                <div class="dropdown-menu">
+                    <a routerLink="user-profile" routerLinkActive="active" class="dropdown-item">user DashBoard</a>
+                    <a routerLink="" routerLinkActive="#" class="dropdown-item">edit profile</a>
+                    <a routerLink="" routerLinkActive="#" class="dropdown-item">settings</a>
+                    <a routerLink="my-bookings" routerLinkActive="" class="dropdown-item">My bookings</a>
+                    <a routerLink="user-profile/booking-history" routerLinkActive="active" class="dropdown-item">history</a>
+                </div>
+
+            </li>
+
+            <li class="nav-item mr-3">
+                <a routerLink="contact-us" routerLinkActive="active" class="nav-link ext">Contact-Us</a>
+            </li>
+            <li>
+                <button class="button2 bg-dark" *ngIf="!isSignedIn" routerLink="log-in" routerLinkActive="active"> LogIn</button>
+                 <button class="button2 bg-dark" *ngIf="isSignedIn" (click)="onSignOut()">LogOut</button>
+            </li>
+        </ul>
+
+    </div>
+</div>

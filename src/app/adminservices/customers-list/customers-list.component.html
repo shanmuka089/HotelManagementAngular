@@ -1,0 +1,26 @@
+<nav class="navbar navbar-light bg-white">
+    <form class="form-inline">
+        <input class="form-control bg-light border-dark mr-sm-2" type="search" name="search" [(ngModel)]="searchText"
+            placeholder="Search" aria-label="Search">
+        <button class="btn btn-success my-1 my-sm-0" type="submit">Search</button>
+    </form>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</nav>
+<table class="table table-hover">
+    <thead class="bg-info">
+        <th>Customer Id</th>
+        <th>Customer name</th>
+        <th>Mail</th>
+        <th>Roles</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tr *ngFor="let user of users | filter:searchText |  paginate:{itemsPerPage:9,currentPage:p};" class="bg-light">
+        <td>{{user.userId}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.mail}}</td>
+        <td>{{user.selectedRoles}}</td>
+        <td><a [routerLink]="['../edit-user']" [queryParams]="{userId:user.userId}"class="btn btn-primary">Edit</a></td>
+        <td><button class="btn btn-danger" (click)="onDelete(user.userId)">Delete</button></td>
+    </tr>
+</table>

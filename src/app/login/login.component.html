@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6 card mt-5">
+            <h1 class="title">SignIn</h1>
+            
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div style="color : red" *ngIf='error'>{{error}}</div>
+                <div class="form-group">
+                    <label for="username">User Name/Email</label>
+                    <input type="text" id="username" name="username" formControlName="username" class="form-control">
+                </div>
+                <p class="text-danger error"
+                    *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">
+                    *please enter username or email</p>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" formControlName="password"
+                        class="form-control">
+                </div>
+                <p class="text-danger error"
+                    *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+                    *please enter your password</p>
+                <div class="login mt-5">
+                    <button type="submit" class="btn btn-success mr-2">login</button>
+                    <button type="reset" class="btn btn-info ml-2">reset</button>
+                </div>
+                <hr>
+
+            </form>
+            <p class="text-center">New User? <a class="decoration" routerLink="/register-here">click here to SignUp</a>
+            </p>
+            <p class="text-center"><a class="decoration" routerLink="../forgot-password">forgot password?</a></p>
+        </div>
+    </div>
+</div>

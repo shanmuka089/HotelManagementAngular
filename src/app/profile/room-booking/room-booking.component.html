@@ -1,0 +1,114 @@
+<div class="container bg-primary text-light hello">
+    <div class="row mt-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <form [formGroup]="registrationform" (ngSubmit)="onSubmit()">
+                <div class="container-fluid">
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="firstname">First Name</label>
+                                <input type="text" id="firstname" formControlName="userFirstName" name="userFirstName" class="form-control">
+                            </div>
+                            <p class="text-danger"
+                            *ngIf="!registrationform.get('userFirstName').valid && registrationform.get('userFirstName').touched">
+                            *please enter your firstname</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" id="lastname" formControlName="userLastName" name="userLastName" class="form-control">
+                            </div>
+                            <p class="text-danger"
+                            *ngIf="!registrationform.get('userLastName').valid && registrationform.get('userLastName').touched">
+                            *please enter your firstname</p>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="mail">Mail</label>
+                                <input type="email" id="mail" formControlName="userMail" name="userMail"
+                                    class="form-control">
+                            </div>
+                            <p class="text-danger"
+                                *ngIf="!registrationform.get('userMail').valid && registrationform.get('userMail').touched">
+                                *please enter your mail</p>
+
+                        </div>
+                        <div class="col-md-2 mt-3">
+                            <div class="form-check" *ngFor="let gender of genders">
+                                <label for="usergender" class="form-check-label">
+                                    <input type="radio" class="form-check-input" [value]="gender" formControlName="userGender" name="userGender">{{gender}}
+                                </label>
+                            </div>  
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="num">Number Of Persons</label>
+                                <input type="text" id="num" formControlName="noPersons" name="noPersons"
+                                    class="form-control">
+                            </div>
+                            <p class="text-danger"
+                                *ngIf="!registrationform.get('noPersons').valid && registrationform.get('noPersons').touched">
+                                *please enter how many persons you stay</p>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" formControlName="userCity" name="userCity"
+                                    class="form-control">
+                            </div>
+                            <p class="text-danger"
+                                *ngIf="!registrationform.get('userCity').valid && registrationform.get('userCity').touched">
+                                *please enter your city</p>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="mobile">Contact number</label>
+                                <input type="text" id="mobile" formControlName="userMobile" name="userMobile"
+                                    class="form-control">
+                            </div>
+                            <p class="text-danger"
+                                *ngIf="!registrationform.get('userMobile').valid && registrationform.get('userMobile').touched">
+                                *please enter your contact number</p>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="checkIn">Check-In</label>
+                                <input type="date" id="checkIn" formControlName="checkInDate" name="checkInDate"
+                                    class="form-control">
+                            </div>
+                            <p class="text-danger"
+                                *ngIf="!registrationform.get('checkInDate').valid && registrationform.get('checkInDate').touched">
+                                *please enter checkIn date</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="checkOut">Check-Out</label>
+                                <input type="date" id="checkOut" formControlName="checkOutDate" name="checkOutDate"
+                                    class="form-control">
+                            </div>
+                            <p class="text-danger"
+                                *ngIf="!registrationform.get('checkOutDate').valid && registrationform.get('checkOutDate').touched">
+                                *please enter checkOut date</p>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="btns mt-4">
+                                <button type="submit" class="btn btn-success mr-3">Book Now</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

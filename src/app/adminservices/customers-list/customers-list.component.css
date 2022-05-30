@@ -1,0 +1,16 @@
+p{
+    margin: 0px;
+}
+.head{
+    margin-right: 0px;
+    margin-left: 0px;
+    background-color:navy;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+ul{
+    margin: 0px;
+}
+b{
+    color:white;
+}

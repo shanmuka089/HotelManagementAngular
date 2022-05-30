@@ -1,0 +1,91 @@
+<div class="container-fluid py-5" *ngIf="foodOreders.length > 0">
+    <div class="row d-flex justify-content-center my-4">
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+
+            <div class="container card mt-2" *ngFor="let foodOreder of foodOreders">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img [src]="foodOreder.itemImageUrl" height="200px" width="200px" alt="oredered item">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row mt-2">
+                            <h5 class="mb-0">Food Name:{{foodOreder.itemName}}</h5>
+                        </div>
+
+                        <div class="row mt-3">
+                            <p class="text-start text-md-center">
+                                <strong>Food Order price:{{foodOreder.itemPrice}}$</strong>
+                            </p>
+                        </div>
+                        <div class="row">
+
+                            <p class="text-start text-md-center">
+                                <strong>Quantity ordered:{{foodOreder.quantity}}</strong>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6">
+                                <button class="btn btn-danger" (click)="onCancelOrder(foodOreder)">Cancel
+                                    order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4" *ngIf="foodOreders.length > 0">
+            <div class="card mb-4">
+                <div class="card-header py-3">
+                    <h5 class="mb-0">Summary</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>name</th>
+                            <th>price</th>
+                            <th>quantity</th>
+                        </thead>
+
+                        <tr *ngFor="let foodOreder of foodOreders" class="bg-light">
+                            <td>{{foodOreder.itemName}}</td>
+                            <td>{{foodOreder.itemPrice}}</td>
+                            <td>{{foodOreder.quantity}}</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{{totalPrice}}</td>
+                            <td>{{totalQuantity}}</td>
+                        </tr>
+
+                    </table>
+                    <button type="button" (click)="onPayNow()" *ngIf="!isPayment" class="btn btn-primary btn-block">
+                        Pay Now
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="isPayment">
+                <div style="color : red" *ngIf='error'>{{error}}</div>
+                <div style="color : rgb(20, 228, 20)" *ngIf='success'>{{success}}</div>
+                <form name="paymentForm" (ngSubmit)="onPay(form)" #form="ngForm">
+                    <div class="form-group">
+                        <label for="cardNum">Credit-Card Number</label>
+                        <input type="text" ngModel name="cardNumber" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNum">IFSC-code</label>
+                        <input type="text" ngModel name="IfscCode" class="form-control">
+                    </div>
+                    <div>
+                        <button class="btn btn-success" type="submit">Confirm Payment</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>

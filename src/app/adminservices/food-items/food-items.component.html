@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-white">
+    <form class="form-inline">
+        <input class="form-control bg-light border-dark mr-sm-2" type="search" name="search" [(ngModel)]="searchText"
+            placeholder="Search" aria-label="Search">
+        <button class="btn btn-success my-1 my-sm-0" type="submit">Search</button>
+    </form>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</nav>
+<table class="table table-striped">
+    <thead class="bg-secondary">
+        <th>Item id</th>
+        <th>Item name</th>
+        <th>Item image</th>
+        <th>Item price</th>
+        <th>Quantity</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tr *ngFor="let item of items | filter:searchText |  paginate:{itemsPerPage:4,currentPage:p};" class="bg-light">
+        <td>{{item.itemId}}</td>
+        <td>{{item.itemName}}</td>
+        <td><img [src]="item.itemImageUrl" alt="imageUrl" height="110px" width="110px"></td>
+        <td>{{item.itemPrice}}</td>
+        <td>{{item.quantity}}</td>
+        <td><a [routerLink]="['../edit-item']" [queryParams]="{itemId:item.itemId}" class="btn btn-primary">Edit</a>
+        </td>
+        <td><button class="btn btn-danger" (click)="onDelete(item.itemId)">Delete</button></td>
+    </tr>
+</table>

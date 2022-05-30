@@ -1,0 +1,20 @@
+.list-group-mine .list-group-item {
+  background-color: #fffcff;
+  border-top: 1px solid #00000c;
+  border-left-color: rgb(7, 0, 0);
+  border-right-color: rgb(10, 10, 10);
+  text-decoration: none;
+}
+
+.list-group-mine .list-group-item:hover {
+  background-color:rgba(233, 233, 242, 0.937);
+}
+
+a{
+  color: black;
+}
+.hello{
+  font-size: larger;
+  font-family: serif;
+  margin-left: -50px;
+}

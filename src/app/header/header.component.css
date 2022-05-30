@@ -1,0 +1,42 @@
+.hell{
+	background-color: black;
+}
+
+.hello{
+    background-color:rgb(7, 3, 76);
+	font-family: serif;
+	font-size: larger;
+}
+.button2
+{
+	color: rgb(252, 251, 250);
+	border-radius: 5px;
+	border-color: aliceblue;
+	height: 45px;
+	width: 85px;	
+}
+h3{
+	font-family: serif;
+	color: white;
+	margin: 0px;
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+p{
+	position: relative;
+	margin: 0%;
+	font-family: serif;
+}
+.feat{
+	text-decoration: none;
+	background-color: rgba(55, 55, 209, 0.47);
+}
+.links,a{
+	font-family: serif;
+	font-size: larger;
+}
+.ext:hover{
+	background-color: rgba(12, 5, 61, 0.214);
+	border-radius: 10px;
+}

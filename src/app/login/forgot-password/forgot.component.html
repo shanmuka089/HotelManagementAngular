@@ -1,0 +1,47 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4 card">
+            <div style="color : red" class="mt-3" *ngIf='error'>{{error}}</div>
+			<div style="color : rgb(6, 186, 6)" class="mt-3" *ngIf='success'>{{success}}</div>
+            <form (ngSubmit)="searchUser(f)" #f="ngForm">
+                <div class="form-group p-3 mt-3">
+                    <label for="username">Enter your username or email</label>
+                    <input type="text" id="username" name="username" ngModel class="form-control">
+                </div>
+                <div class="buttons mb-3" *ngIf="!isUserExist">
+                    <button type="submit" class="btn btn-primary">search account</button>
+                </div>
+            </form>
+            <div class="p-3 mt-3" *ngIf="isUserExist">
+                <div style="color : red" *ngIf='passwordMatch'>{{passwordMatch}}</div>
+                <div style="color : rgb(6, 186, 6)" class="mt-3" *ngIf='changeSuccess'>{{changeSuccess}}</div>
+                <div style="color : red" *ngIf='changefailure'>{{changefailure}}</div>
+                <form (ngSubmit)="onChangePassword(f)" #f="ngForm">
+                   <div class="form-group p-2">
+                    <label for="enterPassword">Enter newPassword</label>
+                    <input type="password" name="enterPassword" ngModel id="enterPassword" #pass1="ngModel" required class="form-control">
+                    <p class="text-danger error"
+                    *ngIf="!pass1.valid && pass1.touched">
+                    *please enter your new password</p>
+                   </div>
+                   <div class="form-group p-2">
+                    <label for="reEnterPassword">Confirm Password</label>
+                    <input type="password" name="reEnterPassword" ngModel #pass2="ngModel" id="reEnterPassword" required class="form-control">
+                    <p class="text-danger error"
+                    *ngIf="!pass2.valid && pass2.touched">
+                    *please enter your new password</p>
+                   </div>
+                    <div class="buttons">
+                        <button type="submit" *ngIf="changeSuccess.length===0" class="btn btn-success mr-2">change password</button>
+                        <button type="reset" *ngIf="changeSuccess.length===0" class="btn btn-info ml-2">reset</button>
+                        <a *ngIf="changeSuccess.length!==0" routerLink="../log-in" class="btn btn-info ml-2">Goto SignIn</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

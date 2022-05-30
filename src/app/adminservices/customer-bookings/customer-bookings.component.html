@@ -1,0 +1,31 @@
+<nav class="navbar navbar-light bg-white">
+    <form class="form-inline">
+        <input class="form-control bg-light border-dark mr-sm-2" type="search" name="search" [(ngModel)]="searchText"
+            placeholder="Search" aria-label="Search">
+        <button class="btn btn-success my-1 my-sm-0" type="submit">Search</button>
+    </form>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</nav>
+<table class="table table-striped">
+    <thead class="bg-info">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Mail</th>
+        <th>No of Persons</th>
+        <th>Gender</th>
+        <th>City</th>
+        <th>CheckIn</th>
+        <th>CheckOut</th>
+    </thead>
+    <tr *ngFor="let history of bookingHistory | filter:searchText |  paginate:{itemsPerPage:9,currentPage:p};" class="bg-light">
+        <td>{{history.userFirstName}}</td>
+        <td>{{history.userLastName}}</td>
+        <td>{{history.userMail}}</td>
+        <td>{{history.noPersons}}</td>
+        <td>{{history.userGender}}</td>
+        <td>{{history.userCity}}</td>
+        <td>{{history.checkInDate}}</td>
+        <td>{{history.checkOutDate}}</td>
+    </tr>
+</table>
+<router-outlet></router-outlet>
